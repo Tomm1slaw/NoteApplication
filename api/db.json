@@ -1,12 +1,6 @@
 {
    "notes": [
       {
-         "id": 1,
-         "title": "notatka 1",
-         "body": "# asdfg",
-         "lastModified": 1544010561795
-      },
-      {
          "id": 2,
          "title": "notatka 2",
          "lastModified": 1544010561795
@@ -19,6 +13,11 @@
       {
          "id": 4,
          "title": "notatka 4",
+         "lastModified": 1544010561795
+      },
+      {
+         "id": 5,
+         "title": "notatka 5",
          "lastModified": 1544010561795
       }
    ]
