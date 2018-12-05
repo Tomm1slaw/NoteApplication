@@ -1,4 +1,4 @@
-const searchBoxInput = document.querySelector('#note-search-input');
+import DOM from '../dom';
 let searchPrase = '';
 
 export function getSearchPhrase() {
@@ -6,7 +6,7 @@ export function getSearchPhrase() {
 }
 
 export function init(onChangeCallback) {
-   searchBoxInput.addEventListener('input', function() {
+   DOM.searchBoxInput.addEventListener('input', function() {
       searchPrase = this.value;
 
       onChangeCallback();

@@ -1,9 +1,8 @@
+import DOM from '../dom';
 import * as searchBox from './search-box';
 import * as addBox from './add-box';
 import { normalizeText } from '../../tools';
 import * as notesActions from '../../notes-actions';
-
-const notesListEl = document.querySelector('#notes-list');
 
 const generateNotesList = () => {
    const generateNoteHTML = note => {
@@ -23,7 +22,7 @@ const generateNotesList = () => {
       .map(note => generateNoteHTML(note))
       .join('');
 
-   notesListEl.innerHTML = html;
+   DOM.notesListEl.innerHTML = html;
 };
 
 generateNotesList();

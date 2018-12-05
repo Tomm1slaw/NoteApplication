@@ -1,12 +1,11 @@
 import * as notesActions from '../../notes-actions';
-
-const addBoxform = document.querySelector('#note-add-form');
+import DOM from '../dom';
 
 export function init(onChangeCallback) {
-   addBoxform.addEventListener('submit', function(e) {
+   DOM.addBoxform.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const noteTitle = document.querySelector('#note-add-input').value.trim();
+      const noteTitle = DOM.addBoxInput.value.trim();
 
       if (noteTitle) {
          notesActions.add(noteTitle);
