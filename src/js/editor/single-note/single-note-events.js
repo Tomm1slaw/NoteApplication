@@ -1,53 +1,55 @@
-import DOM from '../dom';
-
-import * as notesActions from '../../notes-actions';
+import DOM from '../../dom';
 import showdown from 'showdown';
+import page from 'page';
+import * as notesActions from '../../notes-actions';
 
 const mdConverter = new showdown.Converter();
 
-// show editor
+// Show editor
 function showEditor() {
-   DOM.noteContentEl.classList.remove('d-none');
-   DOM.noteContentPreviewEl.classList.add('d-none');
+   DOM().noteContentEl.classList.remove('d-none');
+   DOM().noteContentPreviewEl.classList.add('d-none');
 }
 
 export function noteShowEditorHandler() {
-   DOM.noteEditorBtn.addEventListener('click', function() {
+   DOM().noteEditorBtn.addEventListener('click', function() {
       showEditor();
    });
 }
-// show preview
-function showPreview() {
-   DOM.noteContentEl.classList.add('d-none');
-   DOM.noteContentPreviewEl.classList.remove('d-none');
-}
-export function noteShowPreviewHandler() {
-   DOM.notePreviewBtn.addEventListener('click', function() {
-      const text = DOM.noteContentEl.value;
 
-      // show preview only if MD content exist
+// Show preview
+function showPreview() {
+   DOM().noteContentEl.classList.add('d-none');
+   DOM().noteContentPreviewEl.classList.remove('d-none');
+}
+
+export function noteShowPreviewHandler() {
+   DOM().notePreviewBtn.addEventListener('click', function() {
+      const text = DOM().noteContentEl.value;
+
+      // Show preview only if MD content exists
       if (text) {
          const html = mdConverter.makeHtml(text);
 
          showPreview();
-         DOM.noteContentPreviewEl.innerHTML = html;
+         DOM().noteContentPreviewEl.innerHTML = html;
       }
    });
 }
 
-// remove
+// Remove
 export function noteRemoveHandler(noteId) {
-   DOM.noteRemoveBtn.addEventListener('click', function() {
-      notesActions.remove(noteId);
+   DOM().noteRemoveBtn.addEventListener('click', function() {
+      notesActions.remove(noteId).then(() => page('/editor'));
    });
 }
 
-// save
-export function noteSaveHander(noteId) {
-   DOM.noteContentForm.addEventListener('submit', function(e) {
-      e.preventDefault();
+// Save
+export function noteSaveHandler(noteId) {
+   DOM().noteContentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-      const noteContent = DOM.noteContentEl.value;
+      const noteContent = DOM().noteContentEl.value;
       notesActions.save(noteId, noteContent);
    });
 }

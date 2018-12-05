@@ -15,7 +15,8 @@ export function add(title) {
       axios
          .post('/notes', {
             title,
-            lastModified: Date.now()
+            lastModified: Date.now(),
+            body: ''
          })
          .then(res => res.data)
          .then(notes => resolve(notes))

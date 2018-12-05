@@ -1,15 +1,15 @@
+import DOM from '../../dom';
 import * as notesActions from '../../notes-actions';
-import DOM from '../dom';
 
 export function init(onChangeCallback) {
-   DOM.addBoxform.addEventListener('submit', function(e) {
-      e.preventDefault();
+   DOM().addBoxForm.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-      const noteTitle = DOM.addBoxInput.value.trim();
+      const noteTitle = DOM().addBoxInput.value.trim();
 
       if (noteTitle) {
-         notesActions.add(noteTitle).then(notes => {
-            onChangeCallback();
+         notesActions.add(noteTitle).then(note => {
+            onChangeCallback(note);
          });
       }
    });

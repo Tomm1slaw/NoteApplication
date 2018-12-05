@@ -1,19 +1,18 @@
-import DOM from '../dom';
-
-import * as notesActions from '../../notes-actions';
+import DOM from '../../dom';
 import * as events from './single-note-events';
 
-notesActions.getAll().then(notes => {
-   const firstNote = notes[0];
-   const noteId = firstNote.id;
+const init = noteToShow => {
+   const noteId = noteToShow.id;
 
-   DOM.noteTitleEl.textContent = firstNote.title;
-   DOM.noteContentEl.textContent = firstNote.body;
+   DOM().noteTitleEl.textContent = noteToShow.title;
+   DOM().noteContentEl.textContent = noteToShow.body;
 
-   // events
+   // Events
    events.noteShowEditorHandler();
    events.noteShowPreviewHandler();
    events.noteRemoveHandler(noteId);
 
-   events.noteSaveHander(noteId);
-});
+   events.noteSaveHandler(noteId);
+};
+
+export default init;

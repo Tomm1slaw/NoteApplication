@@ -1,24 +1,16 @@
 {
-   "notes": [
-      {
-         "id": 2,
-         "title": "notatka 2",
-         "lastModified": 1544010561795
-      },
-      {
-         "id": 3,
-         "title": "notatka 3",
-         "lastModified": 1544010561795
-      },
-      {
-         "id": 4,
-         "title": "notatka 4",
-         "lastModified": 1544010561795
-      },
-      {
-         "id": 5,
-         "title": "notatka 5",
-         "lastModified": 1544010561795
-      }
-   ]
+  "notes": [
+    {
+      "title": "ewqeqw",
+      "lastModified": 1544047991904,
+      "body": "fdsfds\n",
+      "id": 2
+    },
+    {
+      "title": "tomek",
+      "lastModified": 1544047999382,
+      "body": "",
+      "id": 3
+    }
+  ]
 }
