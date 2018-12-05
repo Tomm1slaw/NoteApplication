@@ -6,4 +6,11 @@ export function noteRemoveHandler(noteRemoveBtn, noteId) {
    });
 }
 
-export function noteSaveHander(noteContentForm, noteId, noteContentEl) {}
+export function noteSaveHander(noteContentForm, noteId, noteContentEl) {
+   noteContentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const noteContent = noteContentEl.value;
+      notesActions.save(noteId, noteContent);
+   });
+}
