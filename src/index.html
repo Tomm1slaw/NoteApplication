@@ -54,18 +54,25 @@
             <div class="col-md-8">
                <div class="card">
                   <div class="card-body">
-                     <h4 class="mb-3">Tytuł notatki</h4>
+                     <h4 class="mb-3" id="note-title">Tytuł notatki</h4>
 
                      <div>
-                        <button type="button" class="btn btn-secondary">Edytor</button>
-                        <button type="button" class="btn btn-primary">Podgląd</button>
-                        <button type="button" class="btn btn-danger">Usuń</button>
+                        <button type="button" class="btn btn-secondary" id="note-editor-btn">
+                           Edytor
+                        </button>
+                        <button type="button" class="btn btn-primary" id="note-preview-btn">
+                           Podgląd
+                        </button>
+                        <button type="button" class="btn btn-danger" id="note-remove-btn">
+                           Usuń
+                        </button>
                      </div>
 
                      <hr class="mb-4" />
 
-                     <form>
+                     <form id="note-content-form">
                         <textarea
+                           id="note-content"
                            class="form-control mb-4"
                            rows="10"
                            placeholder="Treść notatki..."
